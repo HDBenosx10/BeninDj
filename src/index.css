@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body,html {
+    height: 100vh;
+    width: 100vw;
+}
+
+#todo-container {
+    display: grid;
+    grid-template-rows: 100px 1fr 40px;
+}
+
+.cabecalho {
+    background: #72D0F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.adicionar-tarefa {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding-right: 10rem;
+}
+
+.adicionar-tarefa input+input {
+    margin-left: 1rem;
+}
+
+.adicionar-tarefa input[type="text"]{
+    width: 500px;
+    height: 4rem;
+    outline: 0;
+    border: 0;
+    border-radius: 20px;
+    padding: 1rem;
+    font-size: 2rem;
+
+}
+
+.adicionar-tarefa input[type="text"]:focus {
+    border-bottom: 2px solid rgb(54, 53, 53);
+}
+
+.adicionar-tarefa input[type="button"] {
+    width: 80px;
+    border-radius: 20px;
+    background: #0a3147;
+    color: azure;
+    border: 1px solid #07283b;
+    box-shadow: 2px 2px 5px 0 rgba( 31, 38, 135, 0.37 );
+    outline: 0;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+.adicionar-tarefa input[type="button"]:active {
+    transition: 150ms;
+    transform: translate(1px,1px);
+    box-shadow: 0px 0px 0px;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    padding: 1rem;
+    font-family: Rammetto One;
+}
+
+.conteudo {
+    background: linear-gradient(116.04deg, #22C8ED 35.15%, #5FBEF4 83.01%);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+    
+}
+
+.conteudo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo-block > p {
+    font-size: 2rem;
+    padding: 1rem;
+    font-family: Rammetto One;
+}
+
+.conteudo-content {
+    width: 450px;
+    height: 450px;
+    border-radius: 20px;
+    border: none;
+    padding: 1.5rem;
+    overflow:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+
+
+.task {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.55 );
+    height: 4rem;
+    width: 90%;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    outline: 0;
+}
+
+.task+.task {
+    margin-top: 1rem;
+}
+
+.task:hover {
+    cursor: grab;
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.task p {
+    flex-grow: 1;
+    font-size: 2rem;
+}
+#todo .task {
+    border: solid 1px #22C8ED;  
+}
+#ongoing .task {
+    border: solid 1px  rgb(240, 206, 13);
+}
+#done .task {
+    border: solid 1px rgb(2, 124, 2);
+}
+#done .task p {
+    text-decoration: line-through;
+    color: gray;
+}
+#todo .task::after {
+    background: #22C8ED;
+}
+
+#ongoing .task::after {
+    background: rgb(240, 206, 13);
+}
+
+#done .task::after {
+    background: rgb(2, 124, 2);
+}
+.task::after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: 1rem;
+}
+
+.task span {
+    font-size: 2rem;
+    padding-top: .5rem;
+    color: aliceblue;
+    font-weight: bold;
+    width: 2.5rem;
+    height: 100%;
+    background: red;
+    border: 1px solid red;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.task:hover span {
+    opacity: 1;
+    transition: all 0.8s ease-in-out;
+    -webkit-transition: all 0.8s ease-in-out;
+}
+
+
+.rodape {
+    background: #0a3147;
+    text-align: center;
+    color: azure;
+    font-size: 1.4rem;
+    padding-top: .4rem;
+}

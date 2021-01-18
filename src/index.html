@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>To-Do</title>
+</head>
+<body id="todo-container">
+    <header class="cabecalho">
+        <div class="titulo">
+            <p>TO-DO</p>
+        </div>
+        
+        <div class="adicionar-tarefa">
+            <input type="text" placeholder="Add task" name="addTask" id="addValue">
+            <input type="button" value="+" id="add">
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div class="todo conteudo-block" >
+            <p>To Do:</p>
+            <div id= 'todo' class="conteudo-content" can-drop></div>
+        </div>
+        
+        <div class="ongoing conteudo-block" >
+            <p>On Going</p>
+            <div id="ongoing" class="conteudo-content" can-drop></div>
+        </div>
+        
+        <div class="done conteudo-block" >
+            <p>Done</p>
+            <div id="done" class="conteudo-content" can-drop></div>
+        </div>
+
+    </main>
+
+    <footer class="rodape">&copy;Bernardo Aragão</footer>
+</body>
+<script src="/index.js"></script>
+</html>
